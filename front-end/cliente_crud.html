@@ -1,0 +1,47 @@
+<div class="container" style="padding: 30px 15px 0;" ng-init="getById()" >
+	<div id="content">
+		<ol class="breadcrumb">
+			<li><a href="#/clientes/">Clientes</a></li>
+			<li class="active">Novo</li>
+		</ol>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			<form name="form">
+
+				<div class="form-group" style="width: 120px" ng-class="{ 'has-error': form.codigo.$invalid}">
+					<label class="control-label" for="codigo">Código</label>
+					<input class="form-control" type="number" name="codigo" id="codigo" ng-model="row.codigo" placeholder="Código" required="required" />
+				</div>
+
+				<div class="form-group" ng-class="{ 'has-error': form.nome.$invalid}">
+					<label class="control-label" for="nome">Nome</label>
+					<input class="form-control" type="text" name="nome" id="nome" ng-model="row.nome" placeholder="Nome" required="required" />
+				</div>
+
+				<div class="form-group" ng-class="{ 'has-error': form.cpf.$invalid}">
+					<label class="control-label" for="telefone">Cpf</label>
+					<input class="form-control" type="text" name="cpf" id="cpf" ng-model="row.cpf" placeholder="Cpf" required="required" />
+				</div>
+
+				<div class="form-group" ng-class="{ 'has-error': form.telefone.$invalid}">
+					<label class="control-label" for="telefone">Telefone</label>
+					<input class="form-control" type="text" name="telefone" id="telefone" ng-model="row.telefone" placeholder="Telefone" required="required" />
+				</div>
+
+				<div class="form-group" ng-class="{ 'has-error': form.email.$invalid}">
+					<label class="control-label" for="telefone">Email</label>
+					<input class="form-control" type="text" name="email" id="email" ng-model="row.email" placeholder="Email" required="required" />
+				</div>
+
+
+				<input class="btn btn-raf" type="submit" ng-disabled="form.$invalid" ng-click="save(row)" value="Salvar" />
+				<a class="btn btn-default" href="#/clientes/">Cancelar</a>
+			</form>
+		</div>
+	</div>
+	<div class="row" ng-show="row.id > 0" style="margin-bottom: 1%;">
+		<hr/>
+		<a class="btn btn-danger" href="">Exluir</a>
+	</div>
+</div>

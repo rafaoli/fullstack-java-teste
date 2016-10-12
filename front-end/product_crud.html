@@ -1,0 +1,36 @@
+<div class="container" style="padding: 30px 15px 0;" ng-init="getById()" >
+	<div id="content">
+		<ol class="breadcrumb">
+			<li><a href="#/produtos/">Produtos</a></li>
+			<li class="active">Novo</li>
+		</ol>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			<form name="form">
+
+					<div class="form-group" style="width: 120px" ng-class="{ 'has-error': form.codigo.$invalid}">
+						<label class="control-label" for="codigo">Código</label>
+						<input class="form-control" type="number" name="codigo" id="codigo" ng-model="row.codigo" placeholder="Código" required="required" />
+					</div>
+
+					<div class="form-group" ng-class="{ 'has-error': form.descricao.$invalid}">
+						<label class="control-label" for="descricao">Nome</label>
+						<input class="form-control" type="text" name="descricao" id="descricao" ng-model="row.descricao" placeholder="Descricao" required="required" />
+					</div>
+
+					<div class="form-group" style="width: 160px" ng-class="{ 'has-error': form.valor.$invalid}">
+						<label class="control-label" for="valor">Valor</label>
+						<input class="form-control" type="number" name="valor" id="valor" ng-model="row.valor" placeholder="Valor" required="required" />
+					</div>
+
+				<input class="btn btn-raf" type="submit" ng-disabled="form.$invalid" ng-click="save(row)" value="Salvar" />
+				<a class="btn btn-default" href="#/produtos/">Cancelar</a>
+			</form>
+		</div>
+	</div>
+	<div class="row" ng-show="row.id > 0" style="margin-bottom: 1%;">
+		<hr/>
+		<a class="btn btn-danger" href="">Exluir</a>
+	</div>
+</div>
